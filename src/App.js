@@ -1,26 +1,25 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from './Header';
-import Markdown from './Markdown';
+import Jobs from './Jobs';
 
 import './App.css'; // please replace this CSS with proper material-ui-tailored JSS at some point
-import jobAd from './job-ad';
 
-function App() {
+export default function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
       <CssBaseline/>
       <Header/>
       <Container maxWidth="lg" className="content-container">
-        <Markdown>
-          {jobAd}
-        </Markdown>
+        <Switch>
+          <Route exact path="/jobs/" component={Jobs} />
+          <Redirect from="/" to="/jobs/" component={Jobs} />
+        </Switch>
       </Container>
-    </Fragment>
+    </BrowserRouter>
   );
-}
-
-export default App;
+};
