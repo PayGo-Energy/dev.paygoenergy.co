@@ -24,7 +24,7 @@ class Header extends Component {
       <Fragment>
         <AppBar position="static" color="default">
           <Toolbar className={classes.headerBackground}>
-            <Link to="https://www.paygoenergy.co">
+            <Link href="https://www.paygoenergy.co">
               <img src="https://s3.us-east-2.amazonaws.com/paygoenergy/img/icons/logo-menubar.svg" className={classes.logo}/>
             </Link>
             <Typography variant="h6" color="inherit" className={classes.grow}>
