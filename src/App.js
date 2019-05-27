@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import Header from './Header';
+import Markdown from './Markdown';
+
+import './App.css'; // please replace this CSS with proper material-ui-tailored JSS at some point
+import jobAd from './job-ad';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <CssBaseline/>
+      <Header/>
+      <Container maxWidth="lg" className="content-container">
+        <Markdown>
+          {jobAd}
+        </Markdown>
+      </Container>
+    </Fragment>
   );
 }
 
