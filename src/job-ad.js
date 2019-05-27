@@ -3,7 +3,7 @@
 const jobAd =
 '# Software Engineer\n' +
 '\n' +
-'[PayGo Energy](https://www.paygoenergy.co) are looking for a senior engineer to join our product-focussed agile team to help develop and support live services in a rapidly-growing startup.\n' +
+'[PayGo Energy](https://www.paygoenergy.co) are looking for a senior engineer to join our product-focussed, agile team to help develop and support live services in a rapidly-growing startup.\n' +
 '\n' +
 '\n' +
 '## We\n' +
