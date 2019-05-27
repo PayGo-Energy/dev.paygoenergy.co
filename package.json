@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pages": "yarn build && sed 's_=\"/_=\"./_g' build/index.html > build/index.html.patched && mv build/index.html.patched build/index.html && rm -rf docs && mv build/ docs && git add docs && git status"
   },
   "eslintConfig": {
     "extends": "react-app"
