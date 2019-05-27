@@ -25,7 +25,7 @@ class Header extends Component {
         <AppBar position="static" color="default">
           <Toolbar className={classes.headerBackground}>
             <Link href="https://www.paygoenergy.co">
-              <img src="https://s3.us-east-2.amazonaws.com/paygoenergy/img/icons/logo-menubar.svg" className={classes.logo}/>
+              <img alt="PayGo Energy" src="https://s3.us-east-2.amazonaws.com/paygoenergy/img/icons/logo-menubar.svg" className={classes.logo}/>
             </Link>
             <Typography variant="h6" color="inherit" className={classes.grow}>
               Software Engineering Jobs
