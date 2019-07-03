@@ -1,36 +1,28 @@
 {
-  "name": "dev-paygoenergy-co",
-  "version": "0.1.0",
+  "name": "dev.paygoenergy.co",
   "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "pages": "gatsby build && rm -rf docs && mv public/ docs && git add docs && git status",
+    "start": "gatsby develop"
+  },
   "dependencies": {
-    "@material-ui/core": "^4.0.0",
-    "@material-ui/icons": "^4.0.0",
-    "markdown-to-jsx": "^6.9.4",
+    "@material-ui/core": "^4.1.3",
+    "@material-ui/icons": "^4.2.1",
+    "gatsby": "^2.10.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1"
+    "react-markdown": "^4.1.0",
+    "react-syntax-highlighter": "^10.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "pages": "yarn build && sed 's_=\"/_=\"./_g' build/index.html > build/index.html.patched && mv build/index.html.patched build/index.html && rm -rf docs && mv build/ docs && git add docs && git status"
+  "devDependencies": {
+    "raw-loader": "^3.0.0"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

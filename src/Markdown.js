@@ -1,37 +1,17 @@
 /**
- * Copied from https://github.com/mui-org/material-ui/blob/master/docs/src/pages/getting-started/page-layout-examples/blog/Markdown.js
+ * Copied from https://www.youngdeveloper.co/posts/react-markdown-code-and-syntax-highlighting
  */
 
 import React from 'react';
-import ReactMarkdown from 'markdown-to-jsx';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
 
-const styles = theme => ({
-  listItem: {
-    marginTop: theme.spacing(1),
-  },
-});
+const CodeBlock = ({ value }) =>(
+    <SyntaxHighlighter language="javascript" style={atomDark}>
+      {value}
+    </SyntaxHighlighter>);
 
-const options = {
-  overrides: {
-    h1: { component: props => <Typography gutterBottom variant="h4" {...props} /> },
-    h2: { component: props => <Typography gutterBottom variant="h6" {...props} /> },
-    h3: { component: props => <Typography gutterBottom variant="subtitle1" {...props} /> },
-    h4: { component: props => <Typography gutterBottom variant="caption" paragraph {...props} /> },
-    p: { component: props => <Typography paragraph {...props} /> },
-    a: { component: Link },
-    li: {
-      component: withStyles(styles)(({ classes, ...props }) => (
-        <li className={classes.listItem}>
-          <Typography component="span" {...props} />
-        </li>
-      )),
-    },
-  },
-};
-
-export default function Markdown(props) {
-  return <ReactMarkdown options={options} {...props} />;
+export default function Markdown({ source }) {
+  return <ReactMarkdown source={source} renderers={{ code:CodeBlock }} />;
 }
