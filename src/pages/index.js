@@ -13,7 +13,7 @@ import Layout from '../Layout';
 
 export default function Jobs() {
   return (
-    <Layout title="Software">
+    <Layout>
       <List>
         <ListItem button component={Link} to="/blog">
           <ListItemIcon>
