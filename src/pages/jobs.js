@@ -3,12 +3,12 @@ import React from "react"
 import Layout from '../Layout';
 import Markdown from '../Markdown';
 
-import jobAd from '../job-ad';
+import noJobOpenings from '../no-job-openings.md';
 
 export default function Jobs() {
   return (
     <Layout title="Software Jobs">
-      <Markdown source={jobAd}/>
+      <Markdown source={noJobOpenings}/>
     </Layout>
   );
 }
