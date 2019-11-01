@@ -5,7 +5,7 @@
 import React from 'react';
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const CodeBlock = ({ value }) =>(
     <SyntaxHighlighter language="javascript" style={atomDark}>
