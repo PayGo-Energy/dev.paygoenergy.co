@@ -13,5 +13,5 @@ const CodeBlock = ({ value }) =>(
     </SyntaxHighlighter>);
 
 export default function Markdown({ source }) {
-  return <ReactMarkdown source={source} renderers={{ code:CodeBlock }} />;
+  return <ReactMarkdown source={source} renderers={{ code:CodeBlock }} escapeHtml={false}/>;
 }
