@@ -8,16 +8,18 @@ import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-
+import BlogIcon from '@material-ui/icons/SmsFailed';
+import JobsIcon from '@material-ui/icons/GroupAdd';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const drawerWidth = 120; // TODO this really shouldn't need to be fixed-width
+const drawerWidth = 150; // TODO this really shouldn't need to be fixed-width
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -70,10 +72,16 @@ export default ({ children, title }) => {
         <div className={classes.drawerContainer}>
           <List>
             <ListItem button component={Link} to="/blog">
-              <ListItemText>Blog</ListItemText>
+              <ListItemIcon>
+                <BlogIcon/>
+              </ListItemIcon>
+              <ListItemText style={{marginRight:20}}>Blog</ListItemText>
             </ListItem>
             <ListItem button component={Link} to="/jobs">
-              <ListItemText>Jobs</ListItemText>
+              <ListItemIcon>
+                <JobsIcon/>
+              </ListItemIcon>
+              <ListItemText style={{marginRight:20}}>Jobs</ListItemText>
             </ListItem>
           </List>
         </div>
