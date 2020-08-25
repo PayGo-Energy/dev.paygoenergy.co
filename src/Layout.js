@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
 import AppBar from '@material-ui/core/AppBar';
+import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,7 +15,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 import BlogIcon from '@material-ui/icons/SmsFailed';
 import JobsIcon from '@material-ui/icons/GroupAdd';
@@ -44,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default ({ children, title }) => {
+const LargerLayout = ({ children, title }) => {
   const classes = useStyles();
 
   return (
@@ -94,6 +96,84 @@ export default ({ children, title }) => {
     </div>
   );
 };
+
+
+const smallerStyles = {
+  logo: { height:'2em', marginRight:'1em' },
+  headerBackground: { backgroundColor:'#00254a', color:'white' },
+  grow: { flexGrow:1 },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
+
+class SmallerLayout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.closeDrawer = this.closeDrawer.bind(this);
+    this.openDrawer  = this.openDrawer.bind(this);
+  }
+
+  closeDrawer() { this.setState({ drawerOpen:false }); }
+  openDrawer()  { this.setState({ drawerOpen:true  }); }
+
+  render() {
+    const { children, classes, title } = this.props;
+    const { drawerOpen } = this.state;
+
+    return (
+      <>
+        <AppBar position="static" color="default">
+          <Toolbar className={classes.headerBackground}>
+            <IconButton color="inherit" aria-label="Open drawer" edge="start" onClick={this.openDrawer}>
+              <MenuIcon/>
+            </IconButton>
+            <Link to="/">
+              <img alt="PayGo Energy" src="/logo.svg" className={classes.logo}/>
+            </Link>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              {title}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <Drawer open={drawerOpen} onClose={this.closeDrawer}>
+          <List>
+            <ListItem button component={Link} onClick={this.closeDrawer} to="/blog">
+              <ListItemText>Blog</ListItemText>
+            </ListItem>
+            <ListItem button component={Link} onClick={this.closeDrawer} to="/jobs">
+              <ListItemText>Jobs</ListItemText>
+            </ListItem>
+          </List>
+        </Drawer>
+
+        <Container>
+          {children}
+        </Container>
+      </>
+    );
+  }
+}
+
+const StyledSmallerLayout = withStyles(smallerStyles)(SmallerLayout);
+
+export default ({ children, title }) => (
+  <>
+    <Hidden smUp>
+      <StyledSmallerLayout title={title}>
+        {children}
+      </StyledSmallerLayout>
+    </Hidden>
+    <Hidden xsDown>
+      <LargerLayout title={title}>
+        {children}
+      </LargerLayout>
+    </Hidden>
+  </>
+);
 
 function pageTitle(title) {
   return title ?
