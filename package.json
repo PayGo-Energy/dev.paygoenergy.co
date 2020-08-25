@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "deps:update:prod": "jq  -r '.dependencies    | keys | .[]' package.json | xargs -n1 -I{} yarn add       {}@latest",
-    "deps:update:dev": " jq  -r '.devDependencies | keys | .[]' package.json | xargs -n1 -I{} yarn add --dev {}@latest",
+    "deps:update:prod": "jq -r '.dependencies    | keys | .[]' package.json | sed 's/$/@latest/' | xargs yarn add       && yarn deps:cleanup",
+    "deps:update:dev": " jq -r '.devDependencies | keys | .[]' package.json | sed 's/$/@latest/' | xargs yarn add --dev && yarn deps:cleanup",
     "pages": "gatsby build && rm -rf docs && mv public/ docs && git add docs && git status",
     "start": "gatsby develop"
   },
