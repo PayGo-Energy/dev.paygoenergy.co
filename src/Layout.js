@@ -15,8 +15,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-import './Layout.css'; // please replace this CSS with proper material-ui-tailored JSS at some point
-
 import MenuIcon from '@material-ui/icons/Menu';
 
 const drawerWidth = 120; // TODO this really shouldn't need to be fixed-width
