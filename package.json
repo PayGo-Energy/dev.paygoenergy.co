@@ -5,23 +5,24 @@
   "scripts": {
     "deps:update:prod": "jq -r '.dependencies    | keys | .[]' package.json | sed 's/$/@latest/' | xargs yarn add       && yarn deps:cleanup",
     "deps:update:dev": " jq -r '.devDependencies | keys | .[]' package.json | sed 's/$/@latest/' | xargs yarn add --dev && yarn deps:cleanup",
+    "deps:cleanup": "rm yarn.lock && yarn install",
     "pages": "gatsby build && rm -rf docs && mv public/ docs && git add docs && git status",
     "start": "gatsby develop"
   },
   "dependencies": {
-    "@material-ui/core": "^4.5.2",
-    "@material-ui/icons": "^4.5.1",
-    "gatsby": "^2.17.7",
-    "gatsby-plugin-google-analytics": "^2.1.23",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1",
-    "react-markdown": "^4.2.2",
-    "react-syntax-highlighter": "^11.0.2"
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "gatsby": "^2.24.49",
+    "gatsby-plugin-google-analytics": "^2.3.13",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^13.5.1"
   },
   "devDependencies": {
-    "raw-loader": "^3.1.0"
+    "raw-loader": "^4.0.1"
   },
   "repository": {
     "type": "git",
