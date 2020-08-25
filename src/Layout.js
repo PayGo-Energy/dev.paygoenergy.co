@@ -46,6 +46,23 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const MenuItems = () => (
+  <List>
+    <ListItem button component={Link} to="/blog">
+      <ListItemIcon>
+        <BlogIcon/>
+      </ListItemIcon>
+      <ListItemText style={{marginRight:20}}>Blog</ListItemText>
+    </ListItem>
+    <ListItem button component={Link} to="/jobs">
+      <ListItemIcon>
+        <JobsIcon/>
+      </ListItemIcon>
+      <ListItemText style={{marginRight:20}}>Jobs</ListItemText>
+    </ListItem>
+  </List>
+);
+
 const LargerLayout = ({ children, title }) => {
   const classes = useStyles();
 
@@ -72,20 +89,7 @@ const LargerLayout = ({ children, title }) => {
         }}>
         <Toolbar/>
         <div className={classes.drawerContainer}>
-          <List>
-            <ListItem button component={Link} to="/blog">
-              <ListItemIcon>
-                <BlogIcon/>
-              </ListItemIcon>
-              <ListItemText style={{marginRight:20}}>Blog</ListItemText>
-            </ListItem>
-            <ListItem button component={Link} to="/jobs">
-              <ListItemIcon>
-                <JobsIcon/>
-              </ListItemIcon>
-              <ListItemText style={{marginRight:20}}>Jobs</ListItemText>
-            </ListItem>
-          </List>
+          <MenuItems/>
         </div>
       </Drawer>
 
@@ -140,14 +144,7 @@ class SmallerLayout extends Component {
         </AppBar>
 
         <Drawer open={drawerOpen} onClose={this.closeDrawer}>
-          <List>
-            <ListItem button component={Link} onClick={this.closeDrawer} to="/blog">
-              <ListItemText>Blog</ListItemText>
-            </ListItem>
-            <ListItem button component={Link} onClick={this.closeDrawer} to="/jobs">
-              <ListItemText>Jobs</ListItemText>
-            </ListItem>
-          </List>
+          <MenuItems/>
         </Drawer>
 
         <Container>
