@@ -2,7 +2,7 @@
 
 Welcome to our portal.
 
-We're based in Nairobi, Kenya, creating systems for [PayGo Energy](https://paygoenergy.co).
+We're based in Nairobi, Kenya, building and running systems for [PayGo Energy](https://paygoenergy.co).
 
 
 ## Stack
