@@ -17,6 +17,7 @@ We're heavy users of:
 * [Git](https://git-scm.com/)
 * [Trello](https://trello.com)
 * [Google Cloud Platform](https://cloud.google.com)
+* [CircleCI](https://circleci.com)
 
 ## Team
 
