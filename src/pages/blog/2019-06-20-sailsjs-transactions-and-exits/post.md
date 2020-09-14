@@ -270,8 +270,8 @@ module.exports = {
 };
 
 function addOptimisticUpdate(Model) {
-  Model.optimisticUpdate(db, e, update) {
-    const updated = Model
+  Model.optimisticUpdate = async (db, e, update) => {
+    const updated = await Model
         .updateOne({ id:e.id, version:e.version })
         .set(update)
         .usingConnection(db);
@@ -279,7 +279,7 @@ function addOptimisticUpdate(Model) {
     if(!updated) throw new Error(`${Model.globalId}#${e.id} has changed version since last read (expected v${e.version})!`);
 
     return updated;
-  }
+  };
 }
 ```
 
