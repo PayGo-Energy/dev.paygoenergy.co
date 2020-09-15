@@ -163,7 +163,7 @@ module.exports = {
   fn: async function(inputs, exits) {
     await sails
         .getDatastore()
-        .sendNativeQuery('UPDATE thing SET counter=counter+10 WHERE id=$1', [ 1 ]);
+        .sendNativeQuery('UPDATE Thing SET counter=counter+10 WHERE id=$1', [ 1 ]);
   },
 };
 ```
@@ -174,7 +174,7 @@ module.exports = {
     await sleep(10000);
     await sails
         .getDatastore()
-        .sendNativeQuery('UPDATE thing SET counter=counter+3 WHERE id=$1', [ 1 ]);
+        .sendNativeQuery('UPDATE Thing SET counter=counter+3 WHERE id=$1', [ 1 ]);
   },
 };
 
