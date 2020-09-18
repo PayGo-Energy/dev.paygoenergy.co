@@ -10,7 +10,7 @@ We're based in Nairobi, Kenya, building and running systems for [PayGo Energy](h
 We're heavy users of:
 
 * [Node.js](https://nodejs.org)
-* [SailsJS](https://sailsjs.com)
+* [Sails.js](https://sailsjs.com)
 * [React](https://reactjs.org)
 * [React Native](https://reactnative.dev)
 * [PostgreSQL](https://www.postgresql.org)
