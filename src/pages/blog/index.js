@@ -18,7 +18,7 @@ export default function Blog() {
           <ListItemIcon>
             <SailsIcon/>
           </ListItemIcon>
-          <ListItemText>SailsJS transactions and exits</ListItemText>
+          <ListItemText>Sails.js transactions and exits</ListItemText>
         </ListItem>
       </List>
     </Layout>

@@ -1,7 +1,7 @@
-[SailsJS Transaction Behaviour](/blog/2019-06-20-sailsjs-transactions-and-exits)
+[Sails.js Transaction Behaviour](/blog/2019-06-20-sailsjs-transactions-and-exits)
 =============================
 
-SailsJS [supports transactions](https://sailsjs.com/documentation/reference/waterline-orm/datastores/transaction) when using the [`sails-postgresql`](https://github.com/balderdashy/sails-postgresql) and [`sails-mysql`](https://github.com/balderdashy/sails-mysql) datastore adapters.
+Sails.js [supports transactions](https://sailsjs.com/documentation/reference/waterline-orm/datastores/transaction) when using the [`sails-postgresql`](https://github.com/balderdashy/sails-postgresql) and [`sails-mysql`](https://github.com/balderdashy/sails-mysql) datastore adapters.
 
 I only have experience with `sails-postgresql`, so unless otherwise mentioned, code below is in reference to that.
 
