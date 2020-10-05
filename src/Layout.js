@@ -18,6 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 import BlogIcon from '@material-ui/icons/SmsFailed';
+import HomeIcon from '@material-ui/icons/Home';
 import JobsIcon from '@material-ui/icons/GroupAdd';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -46,20 +47,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const MenuItem = ({ linkTo, icon, text}) => {
+  const selected = linkTo === '/' ? window.location.pathname === '/' : window.location.pathname.startsWith(linkTo);
+
+  return (
+    <ListItem button component={Link} to={linkTo} selected={selected}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText style={{marginRight:20}}>{text}</ListItemText>
+    </ListItem>
+  );
+};
+
 const MenuItems = () => (
   <List>
-    <ListItem button component={Link} to="/blog">
-      <ListItemIcon>
-        <BlogIcon/>
-      </ListItemIcon>
-      <ListItemText style={{marginRight:20}}>Blog</ListItemText>
-    </ListItem>
-    <ListItem button component={Link} to="/jobs">
-      <ListItemIcon>
-        <JobsIcon/>
-      </ListItemIcon>
-      <ListItemText style={{marginRight:20}}>Jobs</ListItemText>
-    </ListItem>
+    <MenuItem linkTo="/"     icon={<HomeIcon/>} text="Home"/>
+    <MenuItem linkTo="/blog" icon={<BlogIcon/>} text="Blog"/>
+    <MenuItem linkTo="/jobs" icon={<JobsIcon/>} text="Jobs"/>
   </List>
 );
 
