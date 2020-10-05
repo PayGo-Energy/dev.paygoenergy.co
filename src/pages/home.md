@@ -35,7 +35,6 @@ We're a multi-functional team, contributing at various levels to:
 * managing agile development iterations
 * technical support
 
-[<img class="avatar" src="https://avatars1.githubusercontent.com/u/3312861" alt="Chepkeitany"/>](https://github.com/Chepkeitany)
 [<img class="avatar" src="https://avatars2.githubusercontent.com/u/12158551" alt="Okwonks"/>](https://github.com/Okwonks)
 [<img class="avatar" src="https://avatars1.githubusercontent.com/u/191496" alt="alxndrsn"/>](https://github.com/alxndrsn)
 [<img class="avatar" src="https://avatars2.githubusercontent.com/u/30429938" alt="slilan96"/>](https://github.com/slilan96)
