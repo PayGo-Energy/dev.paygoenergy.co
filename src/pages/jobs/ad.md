@@ -16,6 +16,7 @@ Location: Nairobi, Kenya
 * use proper industry-proven databases (PostgreSQL)
 * actively monitor and support live environments
 * work closely with our hardware team to integrate with hundreds of IoT devices
+* analyse data and build dashboards for use internally and by external partners
 * constantly work to reduce our support load while increasing our userbase
 * <del>work from our quiet Nairobi office in Bishop Magua Centre (Kilimani)</del>
 * work mostly remotely due to Covid-19 restrictions
