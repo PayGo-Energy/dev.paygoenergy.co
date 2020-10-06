@@ -6,7 +6,7 @@ import Markdown from '../../Markdown';
 import jobAd from './ad.md';
 import noJobOpenings from './no-openings.md';
 
-const gotJobs = false;
+const gotJobs = true;
 
 export default function Jobs() {
   return (
