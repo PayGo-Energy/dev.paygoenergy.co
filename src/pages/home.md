@@ -25,10 +25,11 @@ We're a multi-functional team, contributing at various levels to:
 
 * feature development (mobile/web/APIs)
 * fixing bugs
-* infrastructure and operations (devops)
+* infrastructure & operations (devops)
 * understanding partner requirements
 * systems architecture
 * UX design
+* data investigation & analysis
 * code quality
 * customer satisfaction
 * interfacing with our IoT hardware team
