@@ -7,6 +7,11 @@ I only have experience with `sails-postgresql`, so unless otherwise mentioned, c
 
 At [PayGo](https://dev.paygoenergy.co) we've had a few surprises about how sails transactions act from within controllers.  In hindsight some of these are obvious, but others are a little more subtle.
 
+Also note that there are currently some serious bugs with the sails transaction API, so be careful how you use them:
+
+* [`.transaction()` doesn't guarantee use of a transaction](https://github.com/balderdashy/sails/issues/7068)
+* [`.transaction()` doesn't always complete](https://github.com/balderdashy/sails/issues/6805)
+
 # Rule: updating a row locks it until the transaction completes
 
 If you have two competing transactions updating the same row, one will be blocked until the other has completed.
