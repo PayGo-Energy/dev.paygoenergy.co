@@ -71,9 +71,6 @@ const LargerLayout = ({ children, title }) => {
 
   return (
     <div className={classes.root}>
-      <Helmet defer={false} title={pageTitle(title)}/>
-      <CssBaseline/>
-
       <AppBar position="fixed" color="default" className={classes.appBar}>
         <Toolbar style={{backgroundColor:'#00254a', color:'white'}}>
           <Link to="/">
@@ -160,8 +157,13 @@ class SmallerLayout extends Component {
 
 const StyledSmallerLayout = withStyles(smallerStyles)(SmallerLayout);
 
-export default ({ children, title }) => (
+export default ({ children, title, description }) => (
   <>
+    <Helmet defer={false} title={pageTitle(title)}>
+      <meta name="description" content={description}/>
+    </Helmet>
+    <CssBaseline/>
+
     <Hidden smUp>
       <StyledSmallerLayout title={title}>
         {children}
