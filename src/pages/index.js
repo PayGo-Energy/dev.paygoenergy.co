@@ -6,8 +6,9 @@ import Markdown from '../Markdown';
 
 import home from './home.md';
 
-export default () => (
+const page = () => (
   <Layout>
     <Markdown source={home}/>
   </Layout>
 );
+export default page;
